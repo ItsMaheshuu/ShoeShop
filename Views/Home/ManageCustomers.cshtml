@@ -1,0 +1,72 @@
+﻿
+
+
+@model IEnumerable<SMEProject.Models.Registration>
+
+@{
+    ViewBag.Title = "ManageCustomers";
+}
+
+<section class="bok">
+    <h2>ManageCustomers</h2>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Firstname)</th>
+                <th>@Html.DisplayNameFor(model => model.Lastname)</th>
+                <th>@Html.DisplayNameFor(model => model.Phone_no)</th>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <th>@Html.DisplayNameFor(model => model.Username)</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Firstname)</td>
+                <td>@Html.DisplayFor(modelItem => item.Lastname)</td>
+                <td>@Html.DisplayFor(modelItem => item.Phone_no)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.Username)</td>
+            </tr>
+        }
+    </table>
+</section>
+<style>
+    /* Custom CSS for the table */
+    .table {
+        width: 90%;
+        border-collapse: collapse;
+    }
+
+        .table th,
+        .table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+    .thead-dark th {
+        background-color: #343a40;
+        color: #fff;
+    }
+
+    .table-striped tbody tr:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .bok {
+        padding-left: 10%;
+        min-height: 80vh;
+    }
+
+    .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+    }
+
+    .container-sm, .container {
+        max-width: 100%;
+    }
+</style>

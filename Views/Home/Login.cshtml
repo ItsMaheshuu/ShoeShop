@@ -1,0 +1,104 @@
+﻿@model SMEProject.Models.Registration
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin-Login</title>
+    <link href="~/Content/CSS/bootstrap.css" rel="stylesheet" />
+    <link href="~/Fontawesome/css/all.css" rel="stylesheet" />
+    <link href="~/Content/CSS/form.css" rel="stylesheet" />
+    <style>
+        #main-container {
+            margin: 35px auto;
+            width: 55%;
+            display: flex;
+            border-radius: 6px;
+            flex-direction: row;
+            justify-content: center;
+            box-shadow: 10px 9px 28px -8px rgba(0,0,0,0.75);
+        }
+
+        #image-banner {
+            width: 100%;
+            height: 100%;
+        }
+
+        .ftco-section {
+            width: 50%;
+            height: 25%;
+        }
+
+        #main-form {
+            width: 187%;
+        }
+
+        .main-heading {
+            margin: auto;
+            width: 90%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <div class="ftco-section">
+            <img id="image-banner" src="~/Images/loginnewbg.jpg" />
+        </div>
+        <div class="ftco-section">
+
+
+            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal mt-3">
+                    <h4 style="text-align:center">Login</h4>
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group p-3">
+                        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group p-3">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="form-group m-1">
+
+                        <input style="margin-left:80px;" type="submit" value="Login" class="btn btn-info w-50" />
+
+                    </div>
+                </div>
+            }
+
+            <div class="m-4">
+                @Html.ActionLink("Register Here !", "signUp")
+            </div>
+        </div>
+    </div>
+    <script>
+        <alert>@ViewBag.Error</alert>
+    </script>
+</body>
+</html>
+
+
+
+
