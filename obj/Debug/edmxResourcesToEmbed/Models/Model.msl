@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SMEPROJECTModel1StoreContainer" CdmEntityContainer="SMEPROJECTEntities1">
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="SMEPROJECTModel1.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="order_image" ColumnName="order_image" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="order_quantity" ColumnName="order_quantity" />
+          <ScalarProperty Name="order_total" ColumnName="order_total" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="shoe_id" ColumnName="shoe_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="SMEPROJECTModel1.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="shoe_id" ColumnName="shoe_id" />
+          <ScalarProperty Name="shoe_image" ColumnName="shoe_image" />
+          <ScalarProperty Name="shoe_name" ColumnName="shoe_name" />
+          <ScalarProperty Name="shoe_brand" ColumnName="shoe_brand" />
+          <ScalarProperty Name="shoe_type" ColumnName="shoe_type" />
+          <ScalarProperty Name="shoe_color" ColumnName="shoe_color" />
+          <ScalarProperty Name="shoe_size" ColumnName="shoe_size" />
+          <ScalarProperty Name="shoe_quantity" ColumnName="shoe_quantity" />
+          <ScalarProperty Name="shoe_price" ColumnName="shoe_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="SMEPROJECTModel1.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Phone_no" ColumnName="Phone_no" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
